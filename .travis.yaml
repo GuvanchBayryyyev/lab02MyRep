@@ -1,0 +1,6 @@
+language:true
+
+install:true
+script:true
+after_success:
+- scp -i "se234.pem" -r html/* ubuntu@54.186.245.103:/var/www/html
