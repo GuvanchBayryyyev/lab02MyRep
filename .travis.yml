@@ -1,0 +1,11 @@
+language: node_js
+before_install: 
+    - openssl aes-256-cbc -k "movement2016" -in se234.pem.enc -out se234.pem -d
+install: true
+script: true
+after_success:
+- ls -l
+- scp -i "se234.pem" -r html/* ubuntu@54.186.245.103:/var/www/html
+env:
+  global:
+    secure: HXNNwpEjZ3ROlZ2m24cMalLYeUpttSZ41J5Nv5+7IsbMuwNKPuN4lakNoK0V120aV3B9Oa7VsSp+dOa4fkOnKdZhqjxCb8SqTZvmOvzR04S4SNhI4C5KFKaOpoJl+GtpJTGWe6WfjPNsQgz8eH6wRNgtFNlFk0PMWFWR/JAHQKlXQ3QJYg8Ynq8PM6KWgpJqyxdNqJDFz49EZL9axxhqBvECLGytsPzju6ac6Au6NUt+jyASFDO26AYPAUMKJ9j9R4F8HkU9JccolcKqf1kaFPq/4mdTCI9LgyothkUooYSo/WOQeNQaa8xA2mUbqy8Tfvij5j+D+86J7NfnhL2ZXAJ5HXeGxpdrei0P1/i06RHCE+Te6PFP8Jj8TgDAGqzEqjfL2jrz5n0ENc6Hxg0d+vzaEC2By9KWqRK3rbBxVqLsFh4J9cAQxikg73j6V8nbAaKPZK5kSWaEfzCzRZE35y1zmfkqaJboIBBvn8hjDQ8vck95AtNFizTO9GLY6KbON/Pdnk0lQi/Cj6A/bfh6q+kL6Dmkg95sbRNdktLqduQS1YFDqssmwAGOedYKaDNkBOLXyFC4caHNrSzfIVNmjWMNWentkJg4u7XlId3iO4HQaUmz0nDCoR64uOPO1+qtz1R1yVseDRXfFEJnJc5t5ViZNN0bPH3U+y6rxczApro=
